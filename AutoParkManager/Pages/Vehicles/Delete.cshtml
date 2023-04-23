@@ -1,17 +1,17 @@
 ﻿@page
-@model AutoParkManager.Pages.Vehicles.EditModel
+@model AutoParkManager.Pages.Vehicles.DeleteModel
 @{
 }
 
 <br />
-<h2>Editare Vehicul</h2>
+<h2><strong>Stergere Vehicul</strong></h2>
 
 @if (Model.errorMessage.Length > 0)
 {
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>@Model.errorMessage</strong>
-        <button type="button" class="btn-close" data-bs-dismis="alert" aria-label="close"></button>
-    </div>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>@Model.errorMessage</strong>
+            <button type="button" class="btn-close" data-bs-dismis="alert" aria-label="close"></button>
+        </div>
 }
 
 <form method="POST">
@@ -19,60 +19,60 @@
     <div class="row mb-3">
         <label class="col-sm-3 col-form-label">Marca</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" name="marca" value="@Model.vehInfo.marca" />
+            <input type="text" readonly  class="form-control-plaintext" name="marca" value="@Model.vehInfo.marca" />
         </div>
     </div>
     <div class="row mb-3">
         <label class="col-sm-3 col-form-label">Model</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" name="modelv" value="@Model.vehInfo.modelv" />
+            <input type="text" readonly  class="form-control-plaintext" name="modelv" value="@Model.vehInfo.modelv" />
         </div>
     </div>
     <div class="row mb-3">
         <label class="col-sm-3 col-form-label">Combustibil</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" name="combustibil" value="@Model.vehInfo.combustibil" />
+            <input type="text" readonly  class="form-control-plaintext" name="combustibil" value="@Model.vehInfo.combustibil" />
         </div>
     </div>
     <div class="row mb-3">
         <label class="col-sm-3 col-form-label">An Fabricatie</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" name="an" value="@Model.vehInfo.an" />
+            <input type="text" readonly  class="form-control-plaintext" name="an" value="@Model.vehInfo.an" />
         </div>
     </div>
     <div class="row mb-3">
         <label class="col-sm-3 col-form-label">Capacitate Cilindrica</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" name="capacitate" value="@Model.vehInfo.capacitate" />
+            <input type="text" readonly  class="form-control-plaintext" name="capacitate" value="@Model.vehInfo.capacitate" />
         </div>
     </div>
     <div class="row mb-3">
         <label class="col-sm-3 col-form-label">Culoare</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" name="culoare" value="@Model.vehInfo.culoare" />
+            <input type="text" readonly  class="form-control-plaintext" name="culoare" value="@Model.vehInfo.culoare" />
         </div>
     </div>
     <div class="row mb-3">
         <label class="col-sm-3 col-form-label">Seria de Sasiu</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" name="VIN" value="@Model.vehInfo.VIN" />
+            <input type="text" readonly  class="form-control-plaintext" name="VIN" value="@Model.vehInfo.VIN" />
         </div>
     </div>
 
     @if (Model.succesMessage.Length > 0)
     {
-        <div class="row mb-3">
-            <div class="col-sm-9">
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <strong>@Model.succesMessage</strong>
+            <div class="row mb-3">
+                <div class="col-sm-9">
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>@Model.succesMessage</strong>
+                    </div>
                 </div>
             </div>
-        </div>
     }
 
     <div class="row mb-3">
         <div class="offset-sm-3 col-sm-3 d-grid">
-            <button type="submit" class="btn btn-secondary">Salveaza</button>
+            <button type="submit" class="btn btn-warning">Stergere</button>
         </div>
         <div class="col-sm-6">
             <a class="btn btn-outline-danger" href="/Vehicles" role="button">Anulare</a>

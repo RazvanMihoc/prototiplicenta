@@ -16,3 +16,16 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.top-bot-color {
+    background-color: #191B1C;
+}
+
+body {
+    background-color: #212529;
+    color: white;
+}
+
+.form-control-plaintext{
+    color: white;
+}

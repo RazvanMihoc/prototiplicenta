@@ -1,19 +1,53 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data.SqlClient;
+using System.Security.Cryptography.Xml;
 
 namespace AutoParkManager.Pages.Vehicles
 {
-    public class CreateModel : PageModel
+    public class DeleteModel : PageModel
     {
+
         public VehInfo vehInfo = new VehInfo();
         public String errorMessage = "";
         public String succesMessage = "";
-
         public void OnGet()
         {
-        }
 
+            string id = Request.Query["id"];
+            try
+            {
+                String connectionString = "Data Source=DREYZ;Initial Catalog=auotparkdb;Integrated Security=True";
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    String sql = "SELECT * FROM vehicleDB WHERE id=@id";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@id", id);
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                vehInfo.id = "" + reader.GetInt32(0);
+                                vehInfo.marca = reader.GetString(1);
+                                vehInfo.modelv = reader.GetString(2);
+                                vehInfo.combustibil = reader.GetString(3);
+                                vehInfo.an = reader.GetString(4);
+                                vehInfo.capacitate = reader.GetString(5);
+                                vehInfo.culoare = reader.GetString(6);
+                                vehInfo.VIN = reader.GetString(7);
+                                vehInfo.added_at = reader.GetDateTime(8).ToString();
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                errorMessage = ex.Message;
+            }
+        }
         public void OnPost()
         {
             vehInfo.marca = Request.Form["marca"];
@@ -25,7 +59,7 @@ namespace AutoParkManager.Pages.Vehicles
             vehInfo.culoare = Request.Form["culoare"];
             vehInfo.VIN = Request.Form["VIN"];
 
-            if(vehInfo.marca.Length == 0 || vehInfo.modelv.Length == 0 || vehInfo.an.Length == 0 || vehInfo.combustibil.Length == 0 ||
+            if (vehInfo.marca.Length == 0 || vehInfo.modelv.Length == 0 || vehInfo.an.Length == 0 || vehInfo.combustibil.Length == 0 ||
                 vehInfo.capacitate.Length == 0 || vehInfo.culoare.Length == 0 || vehInfo.VIN.Length == 0)
             {
                 errorMessage = "Toate campurile trebuie sa detina informatie";
@@ -35,12 +69,11 @@ namespace AutoParkManager.Pages.Vehicles
             try
             {
                 String connectionString = "Data Source=DREYZ;Initial Catalog=auotparkdb;Integrated Security=True";
-                using(SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string sql = "INSERT INTO vehicleDB " +
-                                 "(marca, modelv, combustibil, an, capacitate, culoare, VIN) VALUES" +
-                                 "(@marca, @modelv, @combustibil, @an, @capacitate, @culoare, @VIN);";
+                    String sql = "DELETE FROM vehicleDB " +
+                                 "WHERE VIN=@VIN";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
@@ -56,7 +89,7 @@ namespace AutoParkManager.Pages.Vehicles
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 errorMessage = ex.Message;
                 return;
@@ -69,8 +102,9 @@ namespace AutoParkManager.Pages.Vehicles
             vehInfo.capacitate = "";
             vehInfo.culoare = "";
             vehInfo.VIN = "";
-            succesMessage = $"Vehiculul {numeMarca} a fost adaugat!"; 
 
-        }  
+            Response.Redirect("/Vehicles/Index");
+        }
     }
 }
+

@@ -1,0 +1,40 @@
+﻿@page
+@model AutoParkManager.Pages.Vehicles.VehicleListModel
+@{
+}
+
+
+<br />
+<h2>Vehicule Disponibile</h2>
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Marca</th>
+            <th>Model</th>
+            <th>Combustibil</th>
+            <th>An Fabricatie</th>
+            <th>Capacitate Cilindrica</th>
+            <th>Culoare</th>
+            <th>Serie Sasiu</th>
+            <th>Adaugat la data de</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var veh in Model.carslist)
+        {
+            <tr>
+                <td>@veh.id</td>
+                <td>@veh.marca</td>
+                <td>@veh.modelv</td>
+                <td>@veh.combustibil</td>
+                <td>@veh.an</td>
+                <td>@veh.capacitate</td>
+                <td>@veh.culoare</td>
+                <td>@veh.VIN</td>
+                <td>@veh.added_at</td>
+            </tr>
+        }
+    </tbody>
+</table>

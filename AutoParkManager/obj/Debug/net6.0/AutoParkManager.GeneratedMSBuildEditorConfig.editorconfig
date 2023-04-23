@@ -24,10 +24,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/AutoParkManager/AutoParkManager/AutoParkManager/Pages/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [E:/AutoParkManager/AutoParkManager/AutoParkManager/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -36,12 +32,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmVoaWNsZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/AutoParkManager/AutoParkManager/AutoParkManager/Pages/Vehicles/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmVoaWNsZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/AutoParkManager/AutoParkManager/AutoParkManager/Pages/Vehicles/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmVoaWNsZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/AutoParkManager/AutoParkManager/AutoParkManager/Pages/Vehicles/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmVoaWNsZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/AutoParkManager/AutoParkManager/AutoParkManager/Pages/Vehicles/Refunded.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmVoaWNsZXNcUmVmdW5kZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/AutoParkManager/AutoParkManager/AutoParkManager/Pages/Vehicles/Sold.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmVoaWNsZXNcU29sZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/AutoParkManager/AutoParkManager/AutoParkManager/Pages/Vehicles/SoldList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmVoaWNsZXNcU29sZExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/AutoParkManager/AutoParkManager/AutoParkManager/Pages/Vehicles/VehicleList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmVoaWNsZXNcVmVoaWNsZUxpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/AutoParkManager/AutoParkManager/AutoParkManager/Pages/_ViewImports.cshtml]
