@@ -4,6 +4,61 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
+<div class="container d-flex align-items-center flex-column" style="height: 200px;">
+     <div class="p-4"><h1>Bun venit</h1></div>
+
+    <div class="p-4"><h3>Manual de instructiuni:</h3></div>
+</div>
+<div class="accordion" id="accordionFlushExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed bg-secondary text-light" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                Listare Vehicule
+            </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+                Sectiunea <strong>Listare Vehicule</strong> este folosita strict pentru a vizualiza
+                vehiculele listate pentru vanzare, alaturi de detaliile acestora, neexistand posibilitatea
+                de a putea interactiona in niciun fel cu acestea.
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed bg-secondary text-light" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                Manager Vehicule
+            </button>
+        </h2>
+        <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+                Sectiunea <strong>Manager Vehicule</strong> este folosita pentru a administra masinile listate pentru vanzare avand multiple optiuni.<br />
+                    Intai avem optiunea <strong>Adaugare</strong> din coltul stanga sus al tabelului de vehicule prin intermediul caruia se face adaugarea de vehicule, fiind necesara
+                    umplerea tuturor campurilor pentru a putea adauga o masina cu succes.
+                    <br />Dupa care avem, la fiecare vehicul listat in parte, un buton la finalul tabelului, respectiv "Optiuni", la apasare acesta oferind cele 3 optiuni de 'Editare',
+                     'Stergere' si 'Marcheaza drept vandut'.
+                <br />• Butonul 'Editare' ne permite sa editam potentialele greseli efectuate in formularul de adaugare al vehiculului.
+                <br />• Butonul 'Stergere' ne permite sa stergem un vehicul.
+                <br />• Butonul 'Marcheaza drept vandut' va muta vehiculul in sectiunea <strong>Listare Vehicule Vandute</strong> impreuna cu detaliile acesteia, stergand-o
+                     din lista celor eligibile pentru vanzare.
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed bg-secondary text-light" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                Listare Vehicule Vandute
+            </button>
+        </h2>
+        <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+                Sectiunea <strong>Listare Vehicule Vandute</strong> ne permite sa vedem vehiculele care au fost vandute, iar in cazul in care
+                o masina a fost rambursata sau adaugata in mod neintentionat in aceasta sectiune se poate folosi butonul 'Ramburs' care va muta
+                vehiculul impreuna cu detaliile acestuia inapoi in sectiunea vehiculelor eligibile pentru vanzare.
+            </div>
+        </div>
+    </div>
+</div>
 
 </div>
+

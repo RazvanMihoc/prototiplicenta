@@ -29,3 +29,7 @@ body {
 .form-control-plaintext{
     color: white;
 }
+
+.accordion-body {
+    background-color: #2b3036;
+}
